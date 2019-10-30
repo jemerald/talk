@@ -77,7 +77,7 @@ const config = convict({
   concurrency: {
     doc: "The number of worker nodes to spawn to handle traffic",
     format: Number,
-    default: os.cpus().length,
+    default: os.cpus() ? os.cpus().length : 1,
     env: "CONCURRENCY",
     arg: "concurrency",
   },
